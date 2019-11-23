@@ -5,7 +5,7 @@
   "main": "evoluteData.js",
   "author": "Evolute",
   "dependencies": {
-    "axios": "^0.14.0",
+    "axios": "^0.19.0",
     "body-parser": "^1.4.3",
     "express": "^4.13.4",
     "lodash": "^4.15.0",
