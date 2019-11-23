@@ -1,0 +1,34 @@
+<template name="HostList">
+    {{#each hosts}}
+       <div style="float: left">
+            {{> HostSummaryItem}}
+        </div>
+    {{/each}}
+    <div style="clear: left"></div>
+</template>
+   
+   <template name="HostSummaryItem">
+   <ul>
+       <li>Name: <strong>{{Name}}</strong></li>       
+       <li>Address: <strong>{{Addr}}</strong></li>       
+       <li>Port: <strong>{{Port}}</strong></li>       
+       <li>Status: <strong>{{Status}}</strong></li>                 
+       <li>ProtocolMin: <strong>{{ProtocolMin}}</strong></li>       
+       <li>ProtocolMax: <strong>{{ProtocolMax}}</strong></li>       
+       <li>ProtocolCur: <strong>{{ProtocolCur}}</strong></li>       
+       <li>DelegateMin: <strong>{{DelegateMin}}</strong></li>       
+       <li>DelegateMax: <strong>{{DelegateMax}}</strong></li>       
+       <li>DelegateCur: <strong>{{DelegateCur}}</strong></li>         
+       <li>Tags: 
+           <ul>
+               <li>Build: <strong>{{Tags.build}}</strong></li>
+               <li>dc: <strong>{{Tags.dc}}</strong></li>
+               <li>role: <strong>{{Tags.role}}</strong></li>
+               <li>vsn: <strong>{{Tags.vsn}}</strong></li>
+               <li>vsn: <strong>{{Tags.vsn}}</strong></li>
+               <li>vsn_max: <strong>{{Tags.vsn_max}}</strong></li>
+               <li>vsn_min: <strong>{{Tags.vsn_min}}</strong></li>               
+           </ul>
+       </li>         
+   </ul>    
+</template>

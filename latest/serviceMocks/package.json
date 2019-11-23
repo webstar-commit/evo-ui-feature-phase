@@ -1,0 +1,25 @@
+{
+  "name": "evolute-service-mocks",
+  "version": "0.0.1",
+  "description": "Evolute Service Mocks",
+  "main": "index.js",
+  "author": "Sergey Shakhov <svshakhov@gmail.com>",
+  "contributors": [
+    {
+      "name": "Kristopher Francisco"
+    },
+    {
+      "name": "Sergey Shakhov",
+      "email": "svshakhov@gmail.com"
+    }
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.14.0",
+    "lodash": "^4.15.0",
+    "moment": "^2.15.0",
+    "q": "^1.4.1"
+  }
+}
+
+

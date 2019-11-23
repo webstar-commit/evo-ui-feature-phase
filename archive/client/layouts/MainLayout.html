@@ -1,0 +1,18 @@
+<template name="MainLayout">
+    <header>
+        <div>{{> loginButtons}}</div>
+        <ul>
+            <li><a href="/containers">Containers</a></li>
+            <li><a href="/applications">Applications</a></li>
+            <li><a href="/hosts">Hosts</a></li>
+        </ul>
+    </header>
+
+    <main>
+        {{> Template.dynamic template=main}}
+    </main>
+
+    <footer>
+        &copy; Evolute 2015
+    </footer>
+</template>

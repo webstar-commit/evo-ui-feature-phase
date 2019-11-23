@@ -1,0 +1,48 @@
+.system-utilization-overview-visualization {
+    min-height: 600px;
+    font-family: Arial, sans-serif;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.system-utilization-overview-visualization .axis.x .tick text, .system-utilization-overview-visualization .axis.y .tick text {
+    opacity: 0.4;
+    font-size: 12px;
+}
+
+.system-utilization-overview-visualization .axis.x .domain, .system-utilization-overview-visualization .axis.y .domain {
+    display: none;
+}
+
+.system-utilization-overview-visualization .line1 {
+    stroke: #222;
+    opacity: 0.3;
+    stroke-width: 0.8;
+}
+
+.system-utilization-overview-visualization .line2, .system-utilization-overview-visualization .axis.y .tick line {
+    stroke: #222;
+    opacity: 0.3;
+    stroke-width: 0.3;
+}
+
+.system-utilization-overview-visualization .line-text {
+    font-size: 12px;
+    opacity: 0.4;
+}
+
+.system-utilization-overview-visualization .info .title {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.system-utilization-overview-visualization .info .value {
+    font-size: 22px;
+    opacity: 0.8;
+}
+
+.system-utilization-overview-visualization .info circle {
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+<template name="ContainerList">
+    <button class="sort-by-host">Sort by host</button>
+    <button class="sort-by-app">Sort by application</button>
+    <h2>Container list</h2> {{#each containers}} {{> ContainerListItem}} {{/each}}
+</template>
+
+
+<template name="ContainerListItem">
+    <div id="container-{{lxc_id}}">
+        <a href="/containers/{{this.lxc_id}}">{{this.network.IPAddress}} - {{this.app}}</a>
+        <span class="cpu-usage" style="width: 300px; height: 200px; float: left"></span>
+        <span class="memory-usage" style="width: 300px; height: 200px; float: left"></span>
+    </div>
+    <div style="clear: left"></div>
+</template>

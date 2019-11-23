@@ -1,0 +1,31 @@
+<template name="ApplicationList">
+    <ul>
+        {{#each applications}}
+        <li>
+            {{> ApplicationSummaryItem}}
+        </li>
+        {{/each}}
+    </ul>
+
+    <button class="add-application">
+        Add application
+    </button>
+
+    {{#if addingApplication}} {{> quickForm collection="Applications" id="newApplicationForm" type="insert" }} {{/if}}
+</template>
+
+<template name="ApplicationSummaryItem">
+    {{#if editingApplication }} 
+        {{> quickForm collection="Applications" doc=this id="editApplicationForm" type="update" }} 
+    {{else}}
+    <button class="edit-application">Edit</button>
+    <button class="remove-application">Remove</button>
+    <ul>
+        <li>ID: <strong>{{_id}}</strong></li>
+        <li>Image: <strong>{{app_info.image}}</strong></li>
+        <li>Command: <strong>{{app_info.Command}}</strong></li>
+        <li>App ID: <strong>{{app_id}}</strong></li>
+        <li>Status: <strong>{{status}}</strong></li>
+    </ul>
+    {{/if}}
+</template>

@@ -1,0 +1,18 @@
+{
+  "name": "evo-mgmt",
+  "version": "0.1.0",
+  "description": "Evolute Managment Interface",
+  "main": "server.js",
+  "author": "Evolute",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "glob": "^7.0.6",
+    "lodash": "^4.15.0",
+    "method-override": "^2.1.3",
+    "mongoose": "^4.5.8",
+    "morgan": "^1.1.1",
+    "q": "^1.4.1",
+    "request": "^2.74.0"
+  }
+}

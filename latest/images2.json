@@ -1,0 +1,24 @@
+{
+  "images": [
+    {
+      "key": 1,
+      "name": "evo-cassandra-seed",
+      "version": "latest"
+    },
+    {
+      "key": 2,
+      "name": "evo-nginx",
+      "version": "latest"
+    },
+    {
+      "key": 3,
+      "name": "evo-nginx-proxy",
+      "version": "latest"
+    },
+    {
+      "key": 4,
+      "name": "evo-cassandra-peer",
+      "version": "latest"
+    }
+  ]
+}

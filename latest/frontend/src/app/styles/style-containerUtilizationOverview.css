@@ -1,0 +1,21 @@
+.container-utilization-visualization {
+    min-height: 350px;
+    font-family: sans-serif;
+}
+
+.container-utilization-visualization section {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.container-utilization-visualization text.title {
+    font-size: 10px;
+            opacity: 0.6;
+}
+
+.container-utilization-visualization .line {
+    fill: none;
+    stroke-width: 1.5;
+}

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Evolute Systems</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" media="all" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script>
+    $(document).ready(function () {
+      $("form").submit(function () {
+        alert("Submitted");
+      });
+    });
+  </script>
+<!--
+      <h1>Basic Example with External JSX</h1>
+      <div id="container">
+         <p>
+            If you can see this, React is <strong>not</strong> working right. This is probably because you&apos;re viewing
+            this on your file system instead of a web server.<br>
+            Try navigating to the React root
+         <pre>
+          cd /path/to/react
+        </pre>
+         and running
+         <pre>
+          python -m SimpleHTTPServer
+        </pre>
+         and going to <a href="http://localhost:8000/examples/basic-jsx-external/">http://localhost:8000/examples/basic-jsx-external/</a>.
+         </p>
+      </div>
+      <h4>Example Details</h4>
+      <p>This is written with JSX in a separate file and transformed in the browser.
+      <p>
+         Learn more about React at
+         <a href="https://facebook.github.io/react" target="_blank">facebook.github.io/react</a>.
+      </p>
+-->
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+<script src="js/d3/d3.js"></script>
+<script type="text/babel" src="ContainerListing.js"></script>
+</head>
+<body>
+<div id="svg"></div>
+<!--	<button id="save">Save as Image</button>-->
+<div id="svgdataurl"></div>
+
+<header id="header">
+  <div class="top">
+    <div class="container">
+      <a href="#" id="logo" title="ProjectName">ProjectName</a>
+
+      <div class="menu-trigger"><span></span><span></span><span></span></div>
+      <ul class="menu">
+        <li><a href="02-dashboard.html">Dashboard</a></li>
+        <li class="current"><a href="03-system.html">System</a></li>
+        <li><a href="01-application-prototype.html">Application</a></li>
+      </ul>
+      <div class="user">
+        <a href="#"><img src="img/1.png" alt=""><span class="name">Tiffany Bradley</span></a>
+        <a href="#" class="down"></a>
+      </div>
+    </div>
+    <!-- / container -->
+  </div>
+  <div class="bottom">
+    <div class="container">
+      <h1>Overall Health <span>Last updated on Dec 9 2015</span></h1>
+
+      <div class="right">
+        <form action="#">
+          <input type="text" placeholder="Search ...">
+          <button type="submit"></button>
+        </form>
+        <span class="div"></span>
+        <a href="#" class="btn btn-add"><span>Create App</span></a>
+      </div>
+    </div>
+    <!-- / container -->
+  </div>
+</header>
+<!-- / header -->
+
+<div id="body">
+  <div class="bg-d v2">
+    <div class="container ff">
+
+      <div class="tabs">
+        <ul>
+          <li class="current"><a href="#top">Top 5</a></li>
+          <!--						<li><a href="#bot">Bottom 5</a></li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container ff v6">
+    <div class="tab-content active" id="top">
+      <div class="row row-4">
+        <div class="col">
+
+          <div class="panel">
+            <div class="head">
+              <h3>CPU Utilization</h3>
+            </div>
+            <div class="body">
+              <section id="cpu" class="overall-over">
+                <article>
+                  <div class="left1">
+                    <h4>1. Container_123 </h4>
+                  </div>
+                  <div class="right1">
+
+                    <!--											<img src="img/circle.png" alt="">-->
+                  </div>
+                  <div class="modal">
+                    <img src="img/odal.png" alt="">
+                  </div>
+                </article>
+                <article>
+                  <div class="left2">
+                    <h4>2. Container_123 </h4>
+                  </div>
+                  <div class="right2">
+                    <!--											<img src="img/circle.png" alt="">-->
+                  </div>
+                  <div class="modal">
+                    <img src="img/odal.png" alt="">
+                  </div>
+                </article>
+                <article>
+                  <div class="left3">
+                    <h4>3. Container_123 </h4>
+                  </div>
+                  <div class="right3">
+                    <!--											<img src="img/circle.png" alt="">-->
+                  </div>
+                  <div class="modal">
+                    <img src="img/odal.png" alt="">
+                  </div>
+                </article>
+                <article>
+                  <div class="left4">
+                    <h4>4. Container_123 </h4>
+                  </div>
+                  <div class="right4">
+                    <!--											<img src="img/circle.png" alt="">-->
+                  </div>
+                  <div class="modal">
+                    <img src="img/odal.png" alt="">
+                  </div>
+                </article>
+                <article>
+                  <div class="left5">
+                    <h4>5. Container_123 </h4>
+                  </div>
+                  <div class="right5">
+                    <!--											<img src="img/circle.png" alt="">-->
+                  </div>
+                  <div class="modal">
+                    <img src="img/odal.png" alt="">
+                  </div>
+                </article>
+              </section>
+            </div>
+          </div>
+
+        </div>
+        <div class="col">
+
+          <div class="panel">
+            <div class="head">
+              <h3>Memory Utilization</h3>
+            </div>
+            <div class="body">
+              <section id="memory" class="overall-over v3">
+                <article>
+                  <div class="left">
+                    <h4 class="appName">1. Application ABC</h4>
+                  </div>
+                  <div class="right">
+                    <h4>100%</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 10%"></span></li>
+                  </ul>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4 class="appName">2. Application ABC</h4>
+                  </div>
+                  <div class="right">
+                    <h4>100%</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 10%"></span></li>
+                  </ul>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4 class="appName">3. Application ABC</h4>
+                  </div>
+                  <div class="right">
+                    <h4>100%</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 10%"></span></li>
+                  </ul>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4 class="appName">4. Application ABC</h4>
+                  </div>
+                  <div class="right">
+                    <h4>100%</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 10%"></span></li>
+                  </ul>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4 class="appName">5. Application ABC</h4>
+                  </div>
+                  <div class="right">
+                    <h4>100%</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 10%"></span></li>
+                  </ul>
+                </article>
+              </section>
+            </div>
+          </div>
+
+        </div>
+        <div class="col">
+
+          <div class="panel">
+            <div class="head">
+              <h3>Network</h3>
+            </div>
+            <div class="body">
+              <section id="network" class="overall-over v4">
+                <article>
+                  <div class="left">
+                    <h4>1. Container_123</h4>
+                  </div>
+                  <div class="right">
+                    <h4>90/21 </h4>
+                  </div>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>2. Container_123</h4>
+                  </div>
+                  <div class="right">
+                    <h4>90/21 </h4>
+                  </div>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>3. Container_123</h4>
+                  </div>
+                  <div class="right">
+                    <h4>90/21 </h4>
+                  </div>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>4. Container_123</h4>
+                  </div>
+                  <div class="right">
+                    <h4>90/21 </h4>
+                  </div>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>5. Container_123</h4>
+                  </div>
+                  <div class="right">
+                    <h4>90/21 </h4>
+                  </div>
+                </article>
+              </section>
+            </div>
+          </div>
+
+        </div>
+        <div class="col">
+
+          <div class="panel">
+            <div class="head">
+              <h3>Disk</h3>
+            </div>
+            <div class="body">
+              <section id="disk" class="overall-over v5">
+                <article>
+                  <div class="left">
+                    <h4>1. CPU_123 </h4>
+                  </div>
+                  <div class="right">
+                    <h4>Err/Err</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 80%"></span></li>
+                    <li><span class="red" style="width: 75%"></span></li>
+                  </ul>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>2. CPU_123 </h4>
+                  </div>
+                  <div class="right">
+                    <h4>98/60</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 80%"></span></li>
+                    <li><span class="red" style="width: 75%"></span></li>
+                  </ul>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>3. CPU_123 </h4>
+                  </div>
+                  <div class="right">
+                    <h4>98/60</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 80%"></span></li>
+                    <li><span class="red" style="width: 75%"></span></li>
+                  </ul>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>4. CPU_123 </h4>
+                  </div>
+                  <div class="right">
+                    <h4>98/60</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 80%"></span></li>
+                    <li><span class="red" style="width: 75%"></span></li>
+                  </ul>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>5. CPU_123 </h4>
+                  </div>
+                  <div class="right">
+                    <h4>98/60</h4>
+                  </div>
+                  <ul>
+                    <li><span class="purple" style="width: 80%"></span></li>
+                    <li><span class="red" style="width: 75%"></span></li>
+                  </ul>
+                </article>
+              </section>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" id="bot">
+
+      <div class="panel">
+        <div class="head">
+          <h3>Tab2</h3>
+        </div>
+      </div>
+    </div>
+    <!-- TO DO Evolute Application Panel
+          <div class="panel">
+            <div class="head">
+              <h3>TRENDING UTILIZATION</h3>
+            </div>
+            <div class="body">
+              <section class="app-over">
+                <article>
+                  <div class="left">
+                    <h4>Reported Availability</h4>
+                    <p>24%</p>
+                  </div>
+                  <div class="right">
+                    <img src="img/g1.png" alt="">
+                  </div>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>Error Count</h4>
+                    <p>124</p>
+                  </div>
+                  <div class="right">
+                    <img src="img/g2.png" alt="">
+                  </div>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>Error Variance</h4>
+                    <p>48%</p>
+                  </div>
+                  <div class="right">
+                    <img src="img/g3.png" alt="">
+                  </div>
+                </article>
+                <article>
+                  <div class="left">
+                    <h4>Reported Availability</h4>
+                    <p>102</p>
+                  </div>
+                  <div class="right">
+                    <img src="img/g4.png" alt="">
+                  </div>
+                </article>
+                <article class="label">
+                  <div class="left">
+                  </div>
+                  <div class="right">
+                    <img src="img/g5.png" alt="">
+                  </div>
+                </article>
+              </section>
+            </div>
+          </div>
+    -->
+    <div id="FilterableContainerListingBoxcontainer">
+      <!-- This element's contents will be replaced with your component. -->
+    </div>
+    <!--
+
+          <div class="table loading-more">
+            <table>
+              <thead>
+                <tr>
+                  <th class="name">CONTAINER NAME</th>
+                  <th>HOST</th>
+                  <th>HOST RING</th>
+                  <th>OWNER</th>
+                  <th>CPU</th>
+                  <th>NETWORK</th>
+                  <th>MEMORY</th>
+                  <th>DISK</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="name"><a href="#">Container_123</a></td>
+                  <td>HOST_123</td>
+                  <td>HOST_RING_123</td>
+                  <td>Jason Richards</td>
+                  <td>CPU_123</td>
+                  <td>NETWORK_123</td>
+                  <td>56,12 GB</td>
+                  <td>145</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="#">Container_123</a></td>
+                  <td>HOST_123</td>
+                  <td>HOST_RING_123</td>
+                  <td>Jason Richards</td>
+                  <td>CPU_123</td>
+                  <td>NETWORK_123</td>
+                  <td>56,12 GB</td>
+                  <td>145</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="#">Container_123</a></td>
+                  <td>HOST_123</td>
+                  <td>HOST_RING_123</td>
+                  <td>Jason Richards</td>
+                  <td>CPU_123</td>
+                  <td>NETWORK_123</td>
+                  <td>56,12 GB</td>
+                  <td>145</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="#">Container_123</a></td>
+                  <td>HOST_123</td>
+                  <td>HOST_RING_123</td>
+                  <td>Jason Richards</td>
+                  <td>CPU_123</td>
+                  <td>NETWORK_123</td>
+                  <td>56,12 GB</td>
+                  <td>145</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="current"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+            </ul>
+            <div class="load-more">
+              <a href="#" class="btn btn-blue less">Show less</a>
+              <a href="#" class="btn btn-blue more">Show more</a>
+            </div>
+          </div>
+    -->
+
+  </div>
+</div>
+<!-- / body -->
+
+
+<script src="http://code.jquery.com/jquery-1.12.2.min.js"></script>
+<script>window.jQuery || document.write("<script src='js/jquery-1.12.2.min.js'>\x3C/script>")</script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<script src="js/diskCard.js"></script>
+<script src="js/memoryCard.js"></script>
+<script src="js/cpuCard.js"></script>
+
+
+</body>
+</html>

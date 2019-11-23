@@ -1,0 +1,59 @@
+{
+  "name": "evolute-frontend",
+  "version": "0.0.1",
+  "description": "Evolute Frontend SPA Application",
+  "main": "index.js",
+  "scripts": {
+    "build": "node node_modules/webpack/bin/webpack.js --config config/webpack.app.build.js --bail -p",
+    "build-production": "node node_modules/webpack/bin/webpack.js --config config/webpack.app.build.js --bail -p --production",
+    "dev": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --host 0.0.0.0 --port 8080 --history-api-fallback --debug --inline --progress --config config/webpack.app.dev.js",
+    "test": "node_modules/karma/bin/karma start config/karma.conf.js",
+    "test:live": "node_modules/karma/bin/karma start --auto-watch --no-single-run config/karma.conf.js"
+  },
+  "author": "Sergey Shakhov <svshakhov@gmail.com>",
+  "contributors": [
+    {
+      "name": "Kristopher Francisco"
+    },
+    {
+      "name": "Sergey Shakhov",
+      "email": "svshakhov@gmail.com"
+    }
+  ],
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "body-parser": "^1.14.1",
+    "classnames": "^2.2.3",
+    "css-loader": "^0.23.1",
+    "d3": "^3.5.17",
+    "express": "^4.13.3",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "font-awesome": "^4.5.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.22.0",
+    "jquery": "^2.2.4",
+    "jsx-loader": "^0.13.2",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.2",
+    "lodash": "^4.0.0",
+    "moment": "^2.11.1",
+    "postcss-loader": "^0.9.1",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-faux-dom": "^3.0.0",
+    "react-hot-loader": "^1.3.0",
+    "react-router": "^2.6.1",
+    "react-tap-event-plugin": "^1.0.0",
+    "reset-css": "^2.0.20160720",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

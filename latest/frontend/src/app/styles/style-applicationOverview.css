@@ -1,0 +1,51 @@
+.application-overview-visualization {
+    min-height: 350px;
+    font-family: sans-serif;
+}
+
+.application-overview-visualization section {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.application-overview-visualization section .area {
+    stroke: none;
+    fill-rule: evenodd;
+}
+
+.application-overview-visualization section .line {
+    fill: none;
+    stroke-width: 3;
+}
+
+.application-overview-visualization section line.separator {
+    opacity: 0.3;
+    stroke: #222;
+    stroke-width: 0.3;
+}
+
+.application-overview-visualization section .axis.x .tick:first-child {
+    display: none;
+}
+
+.application-overview-visualization section .axis.x .tick text {
+    opacity: 0.3;
+    font-size: 12px;
+}
+
+.application-overview-visualization section .axis.x .domain {
+    display: none;
+}
+
+.application-overview-visualization section .info-title {
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+.application-overview-visualization section .info-value {
+    opacity: 0.8;
+    font-size: 24px;
+}
+

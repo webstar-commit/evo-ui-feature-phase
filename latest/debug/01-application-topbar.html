@@ -1,0 +1,2528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Evolute - Applications View</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" media="all" href="css/style.css">
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <script src="js/jquery-1.12.2.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("form").submit(function(){
+        alert("Submitted");
+    });
+});
+</script>
+</head>
+<body>
+<!--
+<h1>Basic Example with External JSX</h1>
+    <div id="container">
+      <p>
+        If you can see this, React is <strong>not</strong> working right. This is probably because you&apos;re viewing
+        this on your file system instead of a web server.<br>
+        Try navigating to the React root
+        <pre>
+          cd /path/to/react
+        </pre>
+        and running
+        <pre>
+          python -m SimpleHTTPServer
+        </pre>
+        and going to <a href="http://localhost:8000/examples/basic-jsx-external/">http://localhost:8000/examples/basic-jsx-external/</a>.
+      </p>
+    </div>
+    <h4>Example Details</h4>
+    <p>This is written with JSX in a separate file and transformed in the browser.
+        
+    <p>
+      Learn more about React at
+      <a href="https://facebook.github.io/react" target="_blank">facebook.github.io/react</a>.
+    </p>
+    <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+-->
+     <h1>Basic Example</h1>
+    <div id="container">
+      <p>
+        To install React, follow the instructions on
+        <a href="https://github.com/facebook/react/">GitHub</a>.
+      </p>
+      <p>
+        If you can see this, React is <strong>not</strong> working right.
+        If you checked out the source from GitHub make sure to run <code>grunt</code>.
+      </p>
+    </div>
+    <h4>Example Details</h4>
+    <p>This is written in vanilla JavaScript (without JSX) and transformed in the browser.</p>
+    <p>
+      Learn more about React at
+      <a href="https://facebook.github.io/react" target="_blank">facebook.github.io/react</a>.
+    </p>
+        <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    
+    
+    
+    
+    
+    <!-- React -->
+    <script>
+      var ExampleApplication = React.createClass({
+        render: function() {
+          var elapsed = Math.round(this.props.elapsed  / 100);
+          var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
+          var message =
+            'React has been successfully running for ' + seconds + ' seconds.';
+var top="		<div class="top">
+			<div class="container">
+				<a href="#" id="logo" title="ProjectName">ProjectName</a>
+				<div class="menu-trigger"><span></span><span></span><span></span></div>
+				<ul class="menu">
+					<li><a href="02-dashboard.html">Dashboard</a></li>
+					<li><a href="03-system.html">System</a></li>
+					<li class="current"><a href="01-application.html">Application</a></li>
+				</ul>
+				<div class="user">
+					<a href="#"><img src="img/1.png" alt=""><span class="name">Tiffany Bradley</span></a>
+					<a href="#" class="down"></a>
+				</div>
+			</div>
+			<!-- / container -->
+		</div>
+
+
+
+
+"
+          return React.DOM.div(null,top);
+        }
+      });
+
+      // Call React.createFactory instead of directly call ExampleApplication({...}) in React.render
+      var ExampleApplicationFactory = React.createFactory(ExampleApplication);
+
+      var start = new Date().getTime();
+      setInterval(function() {
+        ReactDOM.render(
+          ExampleApplicationFactory({elapsed: new Date().getTime() - start}),
+          document.getElementById('container')
+            
+        );
+      }, 50);
+    </script>
+    <!--End React-->
+
+    
+    
+    
+
+	<header id="header">
+
+
+		<div class="bottom">
+			<div class="container">
+				<h1>Overall Health <span>Last updated on Dec 9 2015</span></h1>
+				<div class="right">
+					<form action="#">
+						<input type="text" placeholder="Search ...">
+						<button type="submit"></button>
+					</form>
+					<span class="div"></span>
+					<a href="#" class="btn btn-add"><span>Create App</span></a>
+				</div>
+			</div>
+			<!-- / container -->
+		</div>
+	</header>
+	<!-- / header -->
+
+	<div id="body">
+		<div class="bg-d">
+			<div class="container ff">
+
+				<div class="main-title">
+					<h2>Applications</h2>
+					<div class="view-type">
+						<a href=".cols-list" class="type current"><span class="ico-cols"></span></a>
+						<a href=".row-list" class="type"><span class="ico-rows"></span></a>
+					</div>
+				</div>
+
+				<div class="panel">
+					<div class="head">
+						<h3>Application Overview</h3>
+					</div>
+					<div class="body">
+						<section class="app-over">
+							<article>
+								<div class="left">
+									<h4>Reported Availability</h4>
+									<p>24%</p>
+								</div>
+								<div class="right">
+									<img src="img/g1.png" alt="">
+								</div>
+							</article>
+							<article>
+								<div class="left">
+									<h4>Error Count</h4>
+									<p>124</p>
+								</div>
+								<div class="right">
+									<img src="img/g2.png" alt="">
+								</div>
+							</article>
+							<article>
+								<div class="left">
+									<h4>Deviation Errors</h4>
+									<p>48%</p>
+								</div>
+								<div class="right">
+									<img src="img/g3.png" alt="">
+								</div>
+							</article>
+							<article>
+								<div class="left">
+									<h4>Sample Response Time</h4>
+									<p>102</p>
+								</div>
+								<div class="right">
+									<img src="img/g4.png" alt="">
+								</div>
+							</article>
+							<article class="label">
+								<div class="left">
+								</div>
+								<div class="right">
+									<img src="img/g5.png" alt="">
+								</div>
+							</article>
+						</section>
+					</div>
+				</div>
+
+				<div class="tabs">
+					<ul>
+						<li class="current"><a href="#appls">Applications</a></li>
+						<li><a href="#services">Services</a></li>
+					</ul>
+					<div class="right">
+						<a href="#" class="btn btn-grey filter">Filter</a>
+						<a href="#" class="btn btn-add btn-add-app">Add Application</a>
+						<a href="#" class="btn btn-add btn-add-serv">Add Service</a>
+					</div>
+				</div>
+
+			</div>
+			<!-- / container -->
+
+		</div>
+		<div class="container ff">
+			<div class="tab-content" id="services">
+				<div class="list-type-r row-list">
+					<div class="table services">
+						<table>
+							<thead>
+								<tr>
+									<th class="name">Name</th>
+									<th class="uptime">UPTIME</th>
+									<th class="owner">Owner</th>
+									<th class="deployment">Deployment</th>
+									<th class="instances">Instances</th>
+									<th class="time">RESPONSE TIME</th>
+									<th class="errors">ERRORS</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="scroll-bar">
+							<table>
+								<tbody>
+									<tr class="active">
+										<td class="name down"><span class="arrow"></span>MDL_Gateway</td>
+										<td class="uptime">12 hours 2 Min</td>
+										<td class="owner">Jason Richards</td>
+										<td class="deployment">Undeployed</td>
+										<td class="instances" contenteditable="true">12</td>
+										<td class="time">12 SEC</td>
+										<td class="errors"><img width="11" src="img/ico_flag.png" alt="">0</td>
+									</tr>
+									<tr class="details active">
+										<td colspan="7">
+											<div class="service-card">	
+												<div class="graph">
+													<img src="img/3.png" alt="">
+												</div>
+												<div class="stats">
+													<ul>
+														<li class="orange">
+															<strong>2</strong>
+															<img src="img/ico_se_1.png" alt="">
+															<span class="text">Database</span>
+														</li>
+														<li class="purple">
+															<strong>10</strong>
+															<img src="img/ico_se_2.png" alt="">
+															<span class="text">Web Engine</span>
+														</li>
+														<li class="blue">
+															<strong>12</strong>
+															<img src="img/ico_se_3.png" alt="">
+															<span class="text">Applications</span>
+														</li>
+													</ul>
+													<table>
+														<thead>
+															<tr>
+																<th class="th-name">NAME</th>
+																<th class="th-uptime">UPTIME</th>
+																<th class="th-instances">INSTANCES</th>
+																<th class="th-time">RESPONSE TIME</th>
+																<th class="th-type">TYPE</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="name down"><span class="arrow"></span>MDL_Gateway</td>
+										<td class="uptime">12 hours 2 Min</td>
+										<td class="owner">Jason Richards</td>
+										<td class="deployment">Undeployed</td>
+										<td class="instances" contenteditable="true">12</td>
+										<td class="time">12 SEC</td>
+										<td class="errors"><img width="11" src="img/ico_flag.png" alt="">0</td>
+									</tr>
+									<tr class="details">
+										<td colspan="7">
+											<div class="service-card">	
+												<div class="graph">
+													<img src="img/3.png" alt="">
+												</div>
+												<div class="stats">
+													<ul>
+														<li class="orange">
+															<strong>2</strong>
+															<img src="img/ico_se_1.png" alt="">
+															<span class="text">Database</span>
+														</li>
+														<li class="purple">
+															<strong>10</strong>
+															<img src="img/ico_se_2.png" alt="">
+															<span class="text">Web Engine</span>
+														</li>
+														<li class="blue">
+															<strong>12</strong>
+															<img src="img/ico_se_3.png" alt="">
+															<span class="text">Applications</span>
+														</li>
+													</ul>
+													<table>
+														<thead>
+															<tr>
+																<th class="th-name">NAME</th>
+																<th class="th-uptime">UPTIME</th>
+																<th class="th-instances">INSTANCES</th>
+																<th class="th-time">RESPONSE TIME</th>
+																<th class="th-type">TYPE</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="name down"><span class="arrow"></span>MDL_Gateway</td>
+										<td class="uptime">12 hours 2 Min</td>
+										<td class="owner">Jason Richards</td>
+										<td class="deployment">Undeployed</td>
+										<td class="instances" contenteditable="true">12</td>
+										<td class="time">12 SEC</td>
+										<td class="errors"><img width="11" src="img/ico_flag.png" alt="">0</td>
+									</tr>
+									<tr class="details">
+										<td colspan="7">
+											<div class="service-card">	
+												<div class="graph">
+													<img src="img/3.png" alt="">
+												</div>
+												<div class="stats">
+													<ul>
+														<li class="orange">
+															<strong>2</strong>
+															<img src="img/ico_se_1.png" alt="">
+															<span class="text">Database</span>
+														</li>
+														<li class="purple">
+															<strong>10</strong>
+															<img src="img/ico_se_2.png" alt="">
+															<span class="text">Web Engine</span>
+														</li>
+														<li class="blue">
+															<strong>12</strong>
+															<img src="img/ico_se_3.png" alt="">
+															<span class="text">Applications</span>
+														</li>
+													</ul>
+													<table>
+														<thead>
+															<tr>
+																<th class="th-name">NAME</th>
+																<th class="th-uptime">UPTIME</th>
+																<th class="th-instances">INSTANCES</th>
+																<th class="th-time">RESPONSE TIME</th>
+																<th class="th-type">TYPE</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="name down"><span class="arrow"></span>MDL_Gateway</td>
+										<td class="uptime">12 hours 2 Min</td>
+										<td class="owner">Jason Richards</td>
+										<td class="deployment">Undeployed</td>
+										<td class="instances" contenteditable="true">12</td>
+										<td class="time">12 SEC</td>
+										<td class="errors"><img width="11" src="img/ico_flag.png" alt="">0</td>
+									</tr>
+									<tr class="details">
+										<td colspan="7">
+											<div class="service-card">	
+												<div class="graph">
+													<img src="img/3.png" alt="">
+												</div>
+												<div class="stats">
+													<ul>
+														<li class="orange">
+															<strong>2</strong>
+															<img src="img/ico_se_1.png" alt="">
+															<span class="text">Database</span>
+														</li>
+														<li class="purple">
+															<strong>10</strong>
+															<img src="img/ico_se_2.png" alt="">
+															<span class="text">Web Engine</span>
+														</li>
+														<li class="blue">
+															<strong>12</strong>
+															<img src="img/ico_se_3.png" alt="">
+															<span class="text">Applications</span>
+														</li>
+													</ul>
+													<table>
+														<thead>
+															<tr>
+																<th class="th-name">NAME</th>
+																<th class="th-uptime">UPTIME</th>
+																<th class="th-instances">INSTANCES</th>
+																<th class="th-time">RESPONSE TIME</th>
+																<th class="th-type">TYPE</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="name down"><span class="arrow"></span>MDL_Gateway</td>
+										<td class="uptime">12 hours 2 Min</td>
+										<td class="owner">Jason Richards</td>
+										<td class="deployment">Undeployed</td>
+										<td class="instances" contenteditable="true">12</td>
+										<td class="time">12 SEC</td>
+										<td class="errors"><img width="11" src="img/ico_flag.png" alt="">0</td>
+									</tr>
+									<tr class="details">
+										<td colspan="7">
+											<div class="service-card">	
+												<div class="graph">
+													<img src="img/3.png" alt="">
+												</div>
+												<div class="stats">
+													<ul>
+														<li class="orange">
+															<strong>2</strong>
+															<img src="img/ico_se_1.png" alt="">
+															<span class="text">Database</span>
+														</li>
+														<li class="purple">
+															<strong>10</strong>
+															<img src="img/ico_se_2.png" alt="">
+															<span class="text">Web Engine</span>
+														</li>
+														<li class="blue">
+															<strong>12</strong>
+															<img src="img/ico_se_3.png" alt="">
+															<span class="text">Applications</span>
+														</li>
+													</ul>
+													<table>
+														<thead>
+															<tr>
+																<th class="th-name">NAME</th>
+																<th class="th-uptime">UPTIME</th>
+																<th class="th-instances">INSTANCES</th>
+																<th class="th-time">RESPONSE TIME</th>
+																<th class="th-type">TYPE</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="name down"><span class="arrow"></span>MDL_Gateway</td>
+										<td class="uptime">12 hours 2 Min</td>
+										<td class="owner">Jason Richards</td>
+										<td class="deployment">Undeployed</td>
+										<td class="instances" contenteditable="true">12</td>
+										<td class="time">12 SEC</td>
+										<td class="errors"><img width="11" src="img/ico_flag.png" alt="">0</td>
+									</tr>
+									<tr class="details">
+										<td colspan="7">
+											<div class="service-card">	
+												<div class="graph">
+													<img src="img/3.png" alt="">
+												</div>
+												<div class="stats">
+													<ul>
+														<li class="orange">
+															<strong>2</strong>
+															<img src="img/ico_se_1.png" alt="">
+															<span class="text">Database</span>
+														</li>
+														<li class="purple">
+															<strong>10</strong>
+															<img src="img/ico_se_2.png" alt="">
+															<span class="text">Web Engine</span>
+														</li>
+														<li class="blue">
+															<strong>12</strong>
+															<img src="img/ico_se_3.png" alt="">
+															<span class="text">Applications</span>
+														</li>
+													</ul>
+													<table>
+														<thead>
+															<tr>
+																<th class="th-name">NAME</th>
+																<th class="th-uptime">UPTIME</th>
+																<th class="th-instances">INSTANCES</th>
+																<th class="th-time">RESPONSE TIME</th>
+																<th class="th-type">TYPE</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_1.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Database</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">2</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+															<tr>
+																<td class="th-name"><img src="img/ico_se_3.png" alt=""><a href="#">Application…123</a></td>
+																<td class="th-uptime">12 hours 2 Min</td>
+																<td class="th-instances">1</td>
+																<td class="th-time">12 SEC</td>
+																<td class="th-type">Application</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="to-clone hide">
+								<tr>
+									<td class="name down"><span class="arrow"></span>NEW one</td>
+									<td class="uptime">12 hours 2 Min</td>
+									<td class="owner">Jason Richards</td>
+									<td class="deployment">Undeployed</td>
+									<td class="instances" contenteditable="true">12</td>
+									<td class="time">12 SEC</td>
+									<td class="errors"><img width="11" src="img/ico_flag.png" alt="">0</td>
+								</tr>
+								<tr class="details">
+									<td colspan="7">
+										<div class="service-card">	
+											<div class="graph">
+												<img src="img/3.png" alt="">
+											</div>
+											<div class="stats">
+												<ul>
+													<li class="orange">
+														<strong>2</strong>
+														<img src="img/ico_se_1.png" alt="">
+														<span class="text">Database</span>
+													</li>
+													<li class="purple">
+														<strong>10</strong>
+														<img src="img/ico_se_2.png" alt="">
+														<span class="text">Web Engine</span>
+													</li>
+													<li class="blue">
+														<strong>12</strong>
+														<img src="img/ico_se_3.png" alt="">
+														<span class="text">Applications</span>
+													</li>
+												</ul>
+												<table>
+													<thead>
+														<tr>
+															<th class="th-name">NAME</th>
+															<th class="th-uptime">UPTIME</th>
+															<th class="th-instances">INSTANCES</th>
+															<th class="th-time">RESPONSE TIME</th>
+															<th class="th-type">TYPE</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="list-type-r cols-list active">
+					<div class="service-card">	
+						<div class="left-side">
+							<div class="avatar">
+								<img src="img/2.png" alt="">
+							</div>
+							<h3>MDL_Gateway</h3>
+							<div class="tags">
+								<a href="#" class="stat">
+									<img src="img/ico_red.png" width="15" alt="">
+									<span>0 ERRORS</span>
+								</a>
+								<a href="#" class="stat ins">
+									<img src="img/ico_green.png" width="17" alt="">
+									<span>12 INSTANCES</span>
+								</a>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</div>
+						<div class="right-side">
+							<div class="stats">
+								<ul>
+									<li class="green">
+										<strong>2</strong>
+										<img src="img/ico_s_3.png" alt="">
+										<span class="text">Database</span>
+									</li>
+									<li class="grey">
+										<strong>10</strong>
+										<img src="img/ico_s_2.png" alt="">
+										<span class="text">Web Engine</span>
+									</li>
+									<li class="blue">
+										<strong>12</strong>
+										<img src="img/ico_s_1.png" alt="">
+										<span class="text">Applications</span>
+									</li>
+								</ul>
+							</div>
+							<div class="graph">
+								<img src="img/3.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="gate-apl">
+						<h3 class="active">MDL_Gateway Applications</h3>
+						<div class="inside active">
+							<section class="add-aplication">
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+												
+											<a href="#" class="stat">
+												<img src="img/ico_flag.png" width="10" alt="">
+												<span>0 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+							</section>
+						</div>
+					</div>
+					<div class="service-card">	
+						<div class="left-side">
+							<div class="avatar">
+								<img src="img/2.png" alt="">
+							</div>
+							<h3>MDL_Gateway</h3>
+							<div class="tags">
+								<a href="#" class="stat">
+									<img src="img/ico_red.png" width="15" alt="">
+									<span>0 ERRORS</span>
+								</a>
+								<a href="#" class="stat ins">
+									<img src="img/ico_green.png" width="17" alt="">
+									<span>12 INSTANCES</span>
+								</a>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</div>
+						<div class="right-side">
+							<div class="stats">
+								<ul>
+									<li class="green">
+										<strong>2</strong>
+										<img src="img/ico_s_3.png" alt="">
+										<span class="text">Database</span>
+									</li>
+									<li class="grey">
+										<strong>10</strong>
+										<img src="img/ico_s_2.png" alt="">
+										<span class="text">Web Engine</span>
+									</li>
+									<li class="blue">
+										<strong>12</strong>
+										<img src="img/ico_s_1.png" alt="">
+										<span class="text">Applications</span>
+									</li>
+								</ul>
+							</div>
+							<div class="graph">
+								<img src="img/3.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="gate-apl">
+						<h3>MDL_Gateway Applications</h3>
+						<div class="inside">
+							<section class="add-aplication">
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+												
+											<a href="#" class="stat">
+												<img src="img/ico_flag.png" width="10" alt="">
+												<span>0 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+							</section>
+						</div>
+					</div>
+					<div class="service-card">	
+						<div class="left-side">
+							<div class="avatar">
+								<img src="img/2.png" alt="">
+							</div>
+							<h3>MDL_Gateway</h3>
+							<div class="tags">
+								<a href="#" class="stat">
+									<img src="img/ico_red.png" width="15" alt="">
+									<span>0 ERRORS</span>
+								</a>
+								<a href="#" class="stat ins">
+									<img src="img/ico_green.png" width="17" alt="">
+									<span>12 INSTANCES</span>
+								</a>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</div>
+						<div class="right-side">
+							<div class="stats">
+								<ul>
+									<li class="green">
+										<strong>2</strong>
+										<img src="img/ico_s_3.png" alt="">
+										<span class="text">Database</span>
+									</li>
+									<li class="grey">
+										<strong>10</strong>
+										<img src="img/ico_s_2.png" alt="">
+										<span class="text">Web Engine</span>
+									</li>
+									<li class="blue">
+										<strong>12</strong>
+										<img src="img/ico_s_1.png" alt="">
+										<span class="text">Applications</span>
+									</li>
+								</ul>
+							</div>
+							<div class="graph">
+								<img src="img/3.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="gate-apl">
+						<h3>MDL_Gateway Applications</h3>
+						<div class="inside">
+							<section class="add-aplication">
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+												
+											<a href="#" class="stat">
+												<img src="img/ico_flag.png" width="10" alt="">
+												<span>0 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+							</section>
+						</div>
+					</div>
+					<div class="service-card">	
+						<div class="left-side">
+							<div class="avatar">
+								<img src="img/2.png" alt="">
+							</div>
+							<h3>MDL_Gateway</h3>
+							<div class="tags">
+								<a href="#" class="stat">
+									<img src="img/ico_red.png" width="15" alt="">
+									<span>0 ERRORS</span>
+								</a>
+								<a href="#" class="stat ins">
+									<img src="img/ico_green.png" width="17" alt="">
+									<span>12 INSTANCES</span>
+								</a>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</div>
+						<div class="right-side">
+							<div class="stats">
+								<ul>
+									<li class="green">
+										<strong>2</strong>
+										<img src="img/ico_s_3.png" alt="">
+										<span class="text">Database</span>
+									</li>
+									<li class="grey">
+										<strong>10</strong>
+										<img src="img/ico_s_2.png" alt="">
+										<span class="text">Web Engine</span>
+									</li>
+									<li class="blue">
+										<strong>12</strong>
+										<img src="img/ico_s_1.png" alt="">
+										<span class="text">Applications</span>
+									</li>
+								</ul>
+							</div>
+							<div class="graph">
+								<img src="img/3.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="gate-apl">
+						<h3>MDL_Gateway Applications</h3>
+						<div class="inside">
+							<section class="add-aplication">
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+												
+											<a href="#" class="stat">
+												<img src="img/ico_flag.png" width="10" alt="">
+												<span>0 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+							</section>
+						</div>
+					</div>
+					<div class="service-card">	
+						<div class="left-side">
+							<div class="avatar">
+								<img src="img/2.png" alt="">
+							</div>
+							<h3>MDL_Gateway</h3>
+							<div class="tags">
+								<a href="#" class="stat">
+									<img src="img/ico_red.png" width="15" alt="">
+									<span>0 ERRORS</span>
+								</a>
+								<a href="#" class="stat ins">
+									<img src="img/ico_green.png" width="17" alt="">
+									<span>12 INSTANCES</span>
+								</a>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</div>
+						<div class="right-side">
+							<div class="stats">
+								<ul>
+									<li class="green">
+										<strong>2</strong>
+										<img src="img/ico_s_3.png" alt="">
+										<span class="text">Database</span>
+									</li>
+									<li class="grey">
+										<strong>10</strong>
+										<img src="img/ico_s_2.png" alt="">
+										<span class="text">Web Engine</span>
+									</li>
+									<li class="blue">
+										<strong>12</strong>
+										<img src="img/ico_s_1.png" alt="">
+										<span class="text">Applications</span>
+									</li>
+								</ul>
+							</div>
+							<div class="graph">
+								<img src="img/3.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="gate-apl">
+						<h3>MDL_Gateway Applications</h3>
+						<div class="inside">
+							<section class="add-aplication">
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+												
+											<a href="#" class="stat">
+												<img src="img/ico_flag.png" width="10" alt="">
+												<span>0 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+							</section>
+						</div>
+					</div>
+					<div class="service-card">	
+						<div class="left-side">
+							<div class="avatar">
+								<img src="img/2.png" alt="">
+							</div>
+							<h3>MDL_Gateway</h3>
+							<div class="tags">
+								<a href="#" class="stat">
+									<img src="img/ico_red.png" width="15" alt="">
+									<span>0 ERRORS</span>
+								</a>
+								<a href="#" class="stat ins">
+									<img src="img/ico_green.png" width="17" alt="">
+									<span>12 INSTANCES</span>
+								</a>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</div>
+						<div class="right-side">
+							<div class="stats">
+								<ul>
+									<li class="green">
+										<strong>2</strong>
+										<img src="img/ico_s_3.png" alt="">
+										<span class="text">Database</span>
+									</li>
+									<li class="grey">
+										<strong>10</strong>
+										<img src="img/ico_s_2.png" alt="">
+										<span class="text">Web Engine</span>
+									</li>
+									<li class="blue">
+										<strong>12</strong>
+										<img src="img/ico_s_1.png" alt="">
+										<span class="text">Applications</span>
+									</li>
+								</ul>
+							</div>
+							<div class="graph">
+								<img src="img/3.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="gate-apl">
+						<h3>MDL_Gateway Applications</h3>
+						<div class="inside">
+							<section class="add-aplication">
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+												
+											<a href="#" class="stat">
+												<img src="img/ico_flag.png" width="10" alt="">
+												<span>0 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+								<article>
+									<div class="head">
+										<img src="img/1.png" alt="">
+										<h4><a href="#">Application_123</a></h4>
+										<div class="tags">
+											<a href="#" class="stat">
+												<img src="img/ico_red.png" width="12" alt="">
+												<span>2 ERRORS</span>
+											</a>
+											<a href="#" class="stat ins">
+												<img src="img/ico_green.png" width="13" alt="">
+												<span>12 INSTANCES</span>
+											</a>
+										</div>
+									</div>
+									<ul>
+										<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+										<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+										<li><strong>SERVICE</strong><span>None</span></li>
+										<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+									</ul>
+								</article>
+							</section>
+						</div>
+					</div>
+
+					<div class="to-clone hide">
+						<div class="service-card">	
+							<div class="left-side">
+								<div class="avatar">
+									<img src="img/2.png" alt="">
+								</div>
+								<h3>NEW ONE</h3>
+								<div class="tags">
+									<a href="#" class="stat">
+										<img src="img/ico_red.png" width="15" alt="">
+										<span>0 ERRORS</span>
+									</a>
+									<a href="#" class="stat ins">
+										<img src="img/ico_green.png" width="17" alt="">
+										<span>12 INSTANCES</span>
+									</a>
+								</div>
+								<ul>
+									<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+									<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+									<li><strong>SERVICE</strong><span>None</span></li>
+									<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+								</ul>
+							</div>
+							<div class="right-side">
+								<div class="stats">
+									<ul>
+										<li class="green">
+											<strong>2</strong>
+											<img src="img/ico_s_3.png" alt="">
+											<span class="text">Database</span>
+										</li>
+										<li class="grey">
+											<strong>10</strong>
+											<img src="img/ico_s_2.png" alt="">
+											<span class="text">Web Engine</span>
+										</li>
+										<li class="blue">
+											<strong>12</strong>
+											<img src="img/ico_s_1.png" alt="">
+											<span class="text">Applications</span>
+										</li>
+									</ul>
+								</div>
+								<div class="graph">
+									<img src="img/3.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="gate-apl">
+							<h3>MDL_Gateway Applications</h3>
+							<div class="inside">
+								<section class="add-aplication">
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+<!--               KINDA WORKING<form method="POST" action="http://52.88.125.22/" id="my_form" target="null">-->
+            <form method="GET" action="http://52.88.125.22/" id="my_form" target="null">
+<!--
+  First name: <input type="text" name="FirstName" value="Mickey"><br>
+  Last name: <input type="text" name="LastName" value="Mouse"><br>
+-->
+</form> 
+            <form method="GET" action="http://52.88.125.22/" id="my_form2" target="null2">
+                </form> 
+            
+            <form method="GET" action="http://52.88.125.22/" id="my_form3" target="null3">
+                </form> 
+            <form method="GET" action="http://52.88.125.22/" id="my_form4" target="null4">
+                </form> 
+            
+			<div class="tab-content active" id="appls">
+					
+				<div class="list-type-r row-list">
+					<div class="options">
+						<p>Select your service applications below:</p>
+						<div class="right">
+							<span class="selected"><span class="count">0</span> Applications selected</span>
+							<a href="#"  class="btn btn-blue">Create</button>
+							<a href="#" class="close"><img src="img/ico_close.png" alt=""></a>
+						</div>
+					</div>
+                 
+					<div class="table">
+						<table>
+							<thead>
+								<tr>
+									<th class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span>Name</th>
+									<th class="uptime">UPTIME</th>
+									<th class="owner">Owner</th>
+									<th class="deployment">Deployment</th>
+									<th class="instances">Instances</th>
+									<th class="time">RESPONSE TIME</th>
+									<th class="errors">ERRORS</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="add-clone">
+									<td colspan="7">
+										<form action="#">
+											<div class="cols">
+												<div class="item">
+													<select>
+														<option class="label-hide">Select Image</option>
+                                                        <option class="label-hide">cassandra-seed</option>
+                                                        <option class="label-hide">cassandra-peer</option>
+                                                        <option class="label-hide">redis</option>
+                                                        <option class="label-hide">hadoop-nn</option>
+                                                        <option class="label-hide">oracle-db12</option>
+                                                        <option class="label-hide">nginx</option>
+                                                        <option class="label-hide">lb-proxy</option>
+                                                        <option class="label-hide">web-backend</option>
+                                                        <option class="label-hide">evo-rhel</option>
+                                                        <option class="label-hide">evo-rhel-secure</option>
+													</select>
+												</div>
+												<div class="item">
+													<input type="text" placeholder="Enter name here...">
+												</div>
+												<div class="item">
+													<input type="text" placeholder="Enter owner here...">
+												</div>
+												<div class="item">
+													<button type="submit" class="btn btn-blue">Create</button>
+													<a href="#" class="close"><img src="img/ico_close.png" alt=""></a>
+												</div>
+											</div>
+										</form>
+									</td>
+								</tr>
+								<tr>
+									<td class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">hadoop-nn</a></td>
+									<td class="uptime">12 hours 2 Min</td>
+									<td class="owner">Jason Richards</td>
+									<td class="deployment">Undeployed <a href="#" class="btn btn-blue">Deploy</a></td>
+									<td class="instances" contenteditable="true">12</td>
+									<td class="time">12 SEC</td>
+									<td class="errors"><img width="11" src="img/ico_flag.png" alt="">1</td>
+								</tr>
+								<tr>
+							<!--        WORKS AMAZINGLY <td class="name" name="name" form="my_form" value="evo-cassandra-seed"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">evo-cassandra-seed</a></td>-->
+                                    <td class="name" value="evo-cassandra-seed"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">evo-cassandra-seed</a></td>
+									<td class="uptime">3 hours 12 Min</td>
+									<td class="owner">Jason Richards</td>
+<!--									<td class="deployment">Undeployed <a href="#" class="btn btn-blue">Deploy</a></td>-->
+<!--<td class="deployment">Undeployed <input type="submit" name="name" value="Submit" form="my_form" class="btn btn-blue"></td>        -->
+        <td class="deployment">Undeployed 
+<!--            KINDA WORKING<input type="submit" name="name" value="evo-cassandra-seed" form="my_form" class="btn btn-blue">-->
+            <input type="submit" value="Submit" form="my_form" class="btn btn-blue">
+            <input type="hidden" name="name" value="evo-cassandra-seed" form="my_form" class="btn btn-blue">
+            <input type="hidden" name="scale" value="1" form="my_form" class="btn btn-blue">
+            <input type="hidden" name="cpu" value="1" form="my_form" class="btn btn-blue">
+            <input type="hidden" name="mem" value="2048" form="my_form" class="btn btn-blue">
+            <input type="hidden" name="image" value="images.evolute.io:5000/evo-cassandra-seed" form="my_form" class="btn btn-blue">
+            <input type="hidden" name="cmd" value="/sbin/init.sh" form="my_form" class="btn btn-blue">
+        </td>        
+									<td class="instances" name="scale" value="2" contenteditable="true" form="my_form">2</td>
+									<td class="time">15 SEC</td>
+									<td class="errors"><img width="12" src="img/ico_red.png" alt="">2</td>
+								</tr>
+								<tr>
+									<td class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">evo-cassandra-peer</a></td>
+									<td class="uptime">DOWN</td>
+									<td class="owner">Jason Richards</td>
+            <td class="deployment">Undeployed 
+
+            <input type="submit" value="Submit" form="my_form2" class="btn btn-blue">
+            <input type="hidden" name="name" value="evo-cassandra-peer" form="my_form2" class="btn btn-blue">
+            <input type="hidden" name="scale" value="12" form="my_form2" class="btn btn-blue">
+            <input type="hidden" name="cpu" value="1" form="my_form2" class="btn btn-blue">
+            <input type="hidden" name="mem" value="2048" form="my_form2" class="btn btn-blue">
+            <input type="hidden" name="image" value="images.evolute.io:5000/evo-cassandra-peer" form="my_form2" class="btn btn-blue">
+            <input type="hidden" name="cmd" value="/sbin/init.sh" form="my_form2" class="btn btn-blue">
+        </td>  
+<!--
+									<td class="deployment">Undeployed 
+                                        <a href="#" class="btn btn-blue">Deploy</a>
+                                    </td>
+-->
+									<td class="instances" contenteditable="true">12</td>
+									<td class="time">12 SEC</td>
+									<td class="errors"><img width="11" src="img/ico_flag.png" alt="">1</td>
+								</tr>
+								<tr>
+									<td class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">redis</a></td>
+									<td class="uptime">DOWN</td>
+									<td class="owner">Jason Richards</td>
+									<td class="deployment">Undeployed <a href="#" class="btn btn-blue">Deploy</a></td>
+									<td class="instances" contenteditable="true">2</td>
+									<td class="time">15 SEC</td>
+									<td class="errors"><img width="12" src="img/ico_red.png" alt="">2</td>
+								</tr>
+								<tr>
+									<td class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">oracle-db12</a></td>
+									<td class="uptime">12 hours 2 Min</td>
+									<td class="owner">Jason Richards</td>
+									<td class="deployment">Undeployed <a href="#" class="btn btn-blue">Deploy</a></td>
+									<td class="instances" contenteditable="true">12</td>
+									<td class="time">12 SEC</td>
+									<td class="errors"><img width="11" src="img/ico_flag.png" alt="">1</td>
+								</tr>
+								<tr>
+									<td class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">evo-lb-proxy</a></td>
+									<td class="uptime">DOWN</td>
+									<td class="owner">Jason Richards</td>
+									<td class="deployment">Undeployed 
+
+
+            <input type="submit" value="Submit" form="my_form3" class="btn btn-blue">
+            <input type="hidden" name="name" value="nginx-proxy" form="my_form3" class="btn btn-blue">
+            <input type="hidden" name="scale" value="1" form="my_form3" class="btn btn-blue">
+            <input type="hidden" name="cpu" value="1" form="my_form3" class="btn btn-blue">
+            <input type="hidden" name="mem" value="2048" form="my_form3" class="btn btn-blue">
+            <input type="hidden" name="image" value="images.evolute.io:5000/evo-nginx-proxy" form="my_form3" class="btn btn-blue">
+            <input type="hidden" name="cmd" value="/sbin/init.sh" form="my_form3" class="btn btn-blue">
+            </td>
+									<td class="instances" contenteditable="true">2</td>
+									<td class="time">15 SEC</td>
+									<td class="errors"><img width="12" src="img/ico_red.png" alt="">2</td>
+								</tr>
+								<tr>
+									<td class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">evo-web-backend</a></td>
+									<td class="uptime">12 hours 2 Min</td>
+									<td class="owner">Jason Richards</td>
+									<td class="deployment">Undeployed
+                                        
+
+            <input type="submit" value="Submit" form="my_form4" class="btn btn-blue">
+            <input type="hidden" name="name" value="nginx" form="my_form4" class="btn btn-blue">
+            <input type="hidden" name="scale" value="12" form="my_form4" class="btn btn-blue">
+            <input type="hidden" name="cpu" value="1" form="my_form4" class="btn btn-blue">
+            <input type="hidden" name="mem" value="2048" form="my_form4" class="btn btn-blue">
+            <input type="hidden" name="image" value="images.evolute.io:5000/evo-nginx" form="my_form4" class="btn btn-blue">
+            <input type="hidden" name="cmd" value="/sbin/init.sh" form="my_form4" class="btn btn-blue">
+            </td>
+									<td class="instances" contenteditable="true">12</td>
+									<td class="time">12 SEC</td>
+									<td class="errors"><img width="11" src="img/ico_flag.png" alt="">1</td>
+								</tr>
+								<tr>
+									<td class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">evo-rhel-secure</a></td>
+									<td class="uptime">DOWN</td>
+									<td class="owner">Jason Richards</td>
+									<td class="deployment">Undeployed <a href="#" class="btn btn-blue">Deploy</a></td>
+									<td class="instances" contenteditable="true">2</td>
+									<td class="time">15 SEC</td>
+									<td class="errors"><img width="12" src="img/ico_red.png" alt="">2</td>
+								</tr>
+								<tr>
+									<td class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">Application…123</a></td>
+									<td class="uptime">12 hours 2 Min</td>
+									<td class="owner">Jason Richards</td>
+									<td class="deployment">Undeployed <a href="#" class="btn btn-blue">Deploy</a></td>
+									<td class="instances" contenteditable="true">12</td>
+									<td class="time">12 SEC</td>
+									<td class="errors"><img width="11" src="img/ico_flag.png" alt="">1</td>
+								</tr>
+								<tr>
+									<td class="name"><span class="checkbox"><input type="checkbox"></input><label></label></span><a href="#">Application…123</a></td>
+									<td class="uptime">DOWN</td>
+									<td class="owner">Jason Richards</td>
+									<td class="deployment">Undeployed <a href="#" class="btn btn-blue">Deploy</a></td>
+									<td class="instances" contenteditable="true">2</td>
+									<td class="time">15 SEC</td>
+									<td class="errors"><img width="12" src="img/ico_red.png" alt="">2</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="list-type-r cols-list active">
+					<section class="add-aplication">
+						<article>
+							<a href="#" class="add">ADD APPLICATION</a>
+						</article>
+						<article>
+							<div class="head">
+								<img src="img/1.png" alt="">
+								<h4><a href="#">cassandra-seed</a></h4>
+								<div class="tags">
+										
+									<a href="#" class="stat">
+										<img src="img/ico_flag.png" width="10" alt="">
+										<span>0 ERRORS</span>
+									</a>
+									<a href="#" class="stat ins">
+										<img src="img/ico_green.png" width="13" alt="">
+										<span>12 INSTANCES</span>
+									</a>
+								</div>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</article>
+						<article>
+							<div class="head">
+								<img src="img/1.png" alt="">
+								<h4><a href="#">redis</a></h4>
+								<div class="tags">
+									<a href="#" class="stat">
+										<img src="img/ico_red.png" width="12" alt="">
+										<span>2 ERRORS</span>
+									</a>
+									<a href="#" class="stat ins">
+										<img src="img/ico_green.png" width="13" alt="">
+										<span>12 INSTANCES</span>
+									</a>
+								</div>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</article>
+						<article>
+							<div class="head">
+								<img src="img/1.png" alt="">
+								<h4><a href="#">hadoop-nn</a></h4>
+								<div class="tags">
+									<a href="#" class="stat">
+										<img src="img/ico_red.png" width="12" alt="">
+										<span>2 ERRORS</span>
+									</a>
+									<a href="#" class="stat ins">
+										<img src="img/ico_green.png" width="13" alt="">
+										<span>12 INSTANCES</span>
+									</a>
+								</div>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</article>
+						<article>
+							<div class="head">
+								<img src="img/1.png" alt="">
+								<h4><a href="#">oracle-db12</a></h4>
+								<div class="tags">
+									<a href="#" class="stat">
+										<img src="img/ico_red.png" width="12" alt="">
+										<span>2 ERRORS</span>
+									</a>
+									<a href="#" class="stat ins">
+										<img src="img/ico_green.png" width="13" alt="">
+										<span>12 INSTANCES</span>
+									</a>
+								</div>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</article>
+						<article>
+							<div class="head">
+								<img src="img/1.png" alt="">
+								<h4><a href="#">nginx</a></h4>
+								<div class="tags">
+									<a href="#" class="stat">
+										<img src="img/ico_red.png" width="12" alt="">
+										<span>2 ERRORS</span>
+									</a>
+									<a href="#" class="stat ins">
+										<img src="img/ico_green.png" width="13" alt="">
+										<span>12 INSTANCES</span>
+									</a>
+								</div>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</article>
+						<article>
+							<div class="head">
+								<img src="img/1.png" alt="">
+								<h4><a href="#">evo-rhel</a></h4>
+								<div class="tags">
+									<a href="#" class="stat">
+										<img src="img/ico_red.png" width="12" alt="">
+										<span>2 ERRORS</span>
+									</a>
+									<a href="#" class="stat ins">
+										<img src="img/ico_green.png" width="13" alt="">
+										<span>12 INSTANCES</span>
+									</a>
+								</div>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</article>
+						<article>
+							<div class="head">
+								<img src="img/1.png" alt="">
+								<h4><a href="#">evo-rhel-secure</a></h4>
+								<div class="tags">
+									<a href="#" class="stat">
+										<img src="img/ico_red.png" width="12" alt="">
+										<span>2 ERRORS</span>
+									</a>
+									<a href="#" class="stat ins">
+										<img src="img/ico_green.png" width="13" alt="">
+										<span>12 INSTANCES</span>
+									</a>
+								</div>
+							</div>
+							<ul>
+								<li><strong>DEPLOYMENT</strong><span>Undeployed</span></li>
+								<li><strong>RESPONSE TIME</strong><span>12 SEC</span></li>
+								<li><strong>SERVICE</strong><span>None</span></li>
+								<li><strong>UPTIME</strong><span>12 hours 2 Min</span></li>
+							</ul>
+						</article>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- / body -->
+
+	<div class="modal-box">
+		<div class="table0">
+		<div class="cell">
+		<div class="popup">
+			<a href="#" class="close"><img src="img/ico_close.png" alt=""></a>
+			<h3>Servive</h3>
+			<form action="#">
+				<fieldset>
+					<label>Service name</label>
+					<input type="text" placeholder="Enter name here...">
+				</fieldset>
+				<fieldset>
+					<label>Owner</label>
+					<input type="text" value="Clera Hein">
+				</fieldset>
+				<div class="application hide">
+					<a href="#" class="delete"><img src="img/ico_close.png" alt=""></a>
+					<h3></h3>
+					<fieldset>
+						<label>Instances</label>
+						<input type="number" value="1">
+					</fieldset>
+					<fieldset>
+						<label>Type</label>
+						<div class="radios">
+							<input type="radio" name="set-1">
+							<label><img src="img/ico_s_1.png" alt=""></label>
+							<input type="radio" name="set-1">
+							<label><img src="img/ico_s_2.png" alt=""></label>
+							<input type="radio" name="set-1">
+							<label><img src="img/ico_s_3.png" alt=""></label>
+							<input type="radio" name="set-1">
+							<label><img src="img/ico_s_1.png" alt=""></label>
+							<input type="radio" name="set-1">
+							<label><img src="img/ico_s_2.png" alt=""></label>
+							<input type="radio" name="set-1">
+							<label><img src="img/ico_s_3.png" alt=""></label>
+						</div>
+					</fieldset>
+				</div>
+				<div class="bottom">
+					<a href="#" class="btn btn-add">Applications</a>
+					<div class="right">
+						<button type="submit" class="btn btn-grey close">Cancel</button>
+						<button type="submit" class="btn btn-blue">Create</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-1.12.2.min.js"></script>
+	<script>window.jQuery || document.write("<script src='js/jquery-1.12.2.min.js'>\x3C/script>")</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

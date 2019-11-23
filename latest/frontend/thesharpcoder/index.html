@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            min-height: 1500px;
+        }
+
+        #graph1 {
+            cursor: crosshair;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+            #graph1 .area {
+                stroke: none;
+                fill-rule: evenodd;
+            }
+
+            #graph1 .axis.x .tick:first-child {
+                display: none;
+            }
+
+            #graph1 .axis.x .tick text {
+                opacity: 0.3;
+                font-size: 12px;
+            }
+
+            #graph1 .axis.x .domain {
+                display: none;
+            }
+
+            #graph1 .axis.y line {
+                opacity: 0.3;
+                stroke: #222;
+                stroke-width: 0.3;
+            }
+
+            #graph1 .axis.y text {
+                opacity: 0.4;
+                font-size: 12px;
+            }
+
+            #graph1 .info rect {
+                opacity: 0.85;
+                fill: #fff;
+            }
+
+            #graph1 .info line {
+                opacity: 0.3;
+                stroke: #222;
+                stroke-width: 0.5;
+            }
+
+            #graph1 .info circle {
+                cursor: pointer;
+            }
+
+            #graph1 .info .title {
+                font-size: 12px;
+                opacity: 0.5;
+            }
+
+            #graph1 .info .value {
+                font-size: 24px;
+                opacity: 0.6;
+            }
+
+        #graph1a {
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #graph1a .axis.x .tick text, #graph1a .axis.y .tick text {
+            opacity: 0.4;
+            font-size: 12px;
+        }
+
+        #graph1a .axis.x .domain, #graph1a .axis.y .domain {
+            display: none;
+        }
+
+        #graph1a .line1 {
+            stroke: #222;
+            opacity: 0.3;
+            stroke-width: 0.8;
+        }
+
+        #graph1a .line2, #graph1a .axis.y .tick line {
+            stroke: #222;
+            opacity: 0.3;
+            stroke-width: 0.3;
+        }
+
+        #graph1a .line-text {
+            font-size: 12px;
+            opacity: 0.4;
+        }
+
+        #graph1a .info .title {
+            font-size: 12px;
+            opacity: 0.5;
+        }
+
+        #graph1a .info .value {
+            font-size: 22px;
+            opacity: 0.8;
+        }
+
+        #graph1a .info circle {
+            cursor: pointer;
+        }
+
+        #graph1b text.title {
+            font-size: 10px;
+            opacity: 0.6;
+        }
+
+        #graph1b .line {
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        #graph3 {
+            background: #eee;
+            display: inline-block;
+            margin: 0;
+        }
+
+            #graph3 li {
+                cursor: pointer;
+                line-height: 30px;
+                padding: 0 10px;
+                position: relative;
+            }
+
+                #graph3 li > svg {
+                    position: absolute;
+                    top: -40px;
+                    left: 100%;
+                    cursor: default;
+                }
+
+            #graph3 svg .app-name {
+                font-size: 14px;
+                fill: #333;
+            }
+
+            #graph3 svg .app-time {
+                font-size: 11px;
+                fill: #aaa;
+            }
+
+            #graph3 svg .app-link {
+                cursor: pointer;
+                font-size: 11px;
+                fill: #333;
+            }
+
+            #graph3 svg .axis.y line, #graph3 svg .axis.y path {
+                display: none;
+            }
+
+            #graph3 svg .axis.y text {
+                font-size: 11px;
+                fill: #aaa;
+            }
+
+            #graph3 svg .line {
+                fill: none;
+                stroke: #000;
+                stroke-width: 2;
+            }
+
+        #graph4 {
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+            #graph4 .area {
+                stroke: none;
+                fill-rule: evenodd;
+            }
+
+            #graph4 .line {
+                fill: none;
+                stroke-width: 3;
+            }
+
+            #graph4 line.separator {
+                opacity: 0.3;
+                stroke: #222;
+                stroke-width: 0.3;
+            }
+
+            #graph4 .axis.x .tick:first-child {
+                display: none;
+            }
+
+            #graph4 .axis.x .tick text {
+                opacity: 0.3;
+                font-size: 12px;
+            }
+
+            #graph4 .axis.x .domain {
+                display: none;
+            }
+
+            #graph4 .info-title {
+                opacity: 0.5;
+                font-size: 12px;
+            }
+
+            #graph4 .info-value {
+                opacity: 0.8;
+                font-size: 24px;
+            }
+    </style>
+</head>
+<body>
+    <h2>System Utilization Overview</h2>
+    <div id="graph1" style="height: 350px; max-width: 800px; border: 1px solid #ccc;"></div>
+    <br />
+    <div id="graph1a" style="height: 600px; max-width: 800px; border: 1px solid #ccc;"></div>
+    <br />
+    <br />
+    <h2>Highest Overall Utilization</h2>
+    <div id="graph1b" style="width: 400px">
+        <hr/>
+        <div>
+            <div style="float: left; width: 120px; line-height: 60px; padding-left: 30px;">1. App_001</div>
+            <div class="graph-container" style="float: left; width: 250px; height: 60px;"></div>
+        </div>
+        <div style="clear: both"></div>
+        <hr/>
+        <div>
+            <div style="float: left; width: 120px; line-height: 60px; padding-left: 30px;">2. App_002</div>
+            <div class="graph-container" style="float: left; width: 250px; height: 60px;"></div>
+        </div>
+        <div style="clear: both"></div>
+        <hr/>
+        <div>
+            <div style="float: left; width: 120px; line-height: 60px; padding-left: 30px;">3. App_003</div>
+            <div class="graph-container" style="float: left; width: 250px; height: 60px;"></div>
+        </div>
+        <div style="clear: both"></div>
+        <hr/>
+        <div>
+            <div style="float: left; width: 120px; line-height: 60px; padding-left: 30px;">4. App_004</div>
+            <div class="graph-container" style="float: left; width: 250px; height: 60px;"></div>
+        </div>
+        <div style="clear: both"></div>
+        <hr/>
+        <div>
+            <div style="float: left; width: 120px; line-height: 60px; padding-left: 30px;">5. App_005</div>
+            <div class="graph-container" style="float: left; width: 250px; height: 60px;"></div>
+        </div>
+        <div style="clear: both"></div>
+        <hr/>
+    </div>
+    <br />
+    <br />
+    <h2>Apps Wheel</h2>
+    <button onclick="loadWheel(0);">Sample 1/0</button>
+    <button onclick="loadWheel(1);">Sample 2/0</button>
+    <button onclick="loadWheel(2);">Sample 1/1</button>
+    <button onclick="loadWheel(3);">Sample 2/1</button>
+    <button onclick="loadWheel(4);">Sample 2/2</button>
+    <button onclick="loadWheel(5);">Sample full data</button>
+    <br />
+    <br />
+    <div id="graph2" style="height: 350px; max-width: 800px; border: 1px solid #ccc;"></div>
+    <br />
+    <br />
+    <h2>CPU Utilization (hover to see charts)</h2>
+    <ul id="graph3">
+        <li>1. CPU_001</li>
+        <li>2. CPU_002</li>
+        <li>3. CPU_003</li>
+        <li>4. CPU_004</li>
+        <li>5. CPU_005</li>
+    </ul>
+    <br />
+    <br />
+    <h2>Application Overview</h2>
+    <div id="graph4" style="height: 350px; max-width: 800px; border: 1px solid #ccc;"></div>
+    <br />
+    <br />
+
+    <script type="text/javascript" src="d3.v3.min.js"></script>
+    <script type="text/javascript" src="site.d3-graphs.raw.js"></script>
+    <script type="text/javascript">
+        var data1, data2 = [], data3, data4;
+        var parseTime = d3.time.format("%Y-%m-%dT%H").parse;
+        var parseTime2 = d3.time.format("%Y-%m-%dT%H:%M:%SZ").parse;
+
+        // graph 1
+        d3.json("container_stats_aggregated.json", function (error, json) {
+
+            data1 = { avg: { cpu: 0, memory: 0, disk: 0, network: 0 }, days: [] };
+
+            json.forEach(function (d) {
+                if (d.value.period == "hour" && d.value.lxcId == null) {
+                    data1.days.push({
+                        time: parseTime(d.value.timeFrom),
+                        cpu: d.value.cpu * 100,
+                        memory: d.value.memory * 100,
+                        disk: d.value.blkioRead + d.value.blkioWrite,
+                        network: d.value.networkRx + d.value.networkTx,
+                        diskR: d.value.blkioRead,
+                        diskW: d.value.blkioWrite,
+                        networkR: d.value.networkRx,
+                        networkW: d.value.networkTx
+                    });
+                }
+            });
+
+            if (data1.days.length > 0) {
+                data1.avg.cpu = d3.sum(data1.days, function (d) { return d.cpu; }) / data1.days.length;
+                data1.avg.memory = d3.sum(data1.days, function (d) { return d.memory; }) / data1.days.length;
+                data1.avg.disk = d3.sum(data1.days, function (d) { return d.disk; }) / data1.days.length;
+                data1.avg.network = d3.sum(data1.days, function (d) { return d.network; }) / data1.days.length;
+
+                data1.avg.diskR = d3.sum(data1.days, function (d) { return d.diskR; }) / data1.days.length;
+                data1.avg.diskW = d3.sum(data1.days, function (d) { return d.diskW; }) / data1.days.length;
+                data1.avg.networkR = d3.sum(data1.days, function (d) { return d.networkR; }) / data1.days.length;
+                data1.avg.networkW = d3.sum(data1.days, function (d) { return d.networkW; }) / data1.days.length;
+            }
+
+            initGraph1(d3.select("#graph1"), data1);
+            initGraph1a(d3.select("#graph1a"), data1);
+        });
+
+        // graph 2
+        for (var i = 0; i <= 5; i++) {
+            loadWheelData(i);
+        }
+
+        function loadWheelData(index) {
+            d3.json("data2" + index + ".json", function (error, json) {
+                var idata = [[], [], []];
+
+                json.forEach(function (d) {
+                    if (d.apps != null) {
+                        d.apps.forEach(function (d1) {
+                            if (d1 != null && d1.length == 1) {
+                                var appObj = d1[0];
+
+                                if (appObj.appType == 'Database') {
+                                    idata[0][idata[0].length] = appObj;
+                                } else if (appObj.appType == 'Web Engine') {
+                                    idata[1][idata[1].length] = appObj;
+                                } else {
+                                    idata[2][idata[2].length] = appObj;
+                                }
+                            }
+                        });
+                    }
+                });
+
+                data2[index] = idata;
+
+                if (index == 5) loadWheel(index);
+            });
+        }
+
+        function loadWheel(code) {
+            initGraph2(d3.select("#graph2"), data2[code], "MDL_Gateway (" + (code + 1) + ")");
+        }
+
+        // graph 3
+        d3.json("container_stats_aggregated.json", function (error, json) {
+
+            data3 = [];
+
+            json.forEach(function (d) {
+                if (d.value.period == "hour" && d.value.lxcId != null && d.value.lxcId.length > 0) {
+                    for (var i = 0; i < data3.length; i++) {
+                        if (data3[i].appId == d.value.lxcId) {
+                            data3[i].days.push({
+                                time: parseTime(d.value.timeFrom),
+                                cpu: d.value.cpu * 100,
+                                memory: d.value.memory * 100,
+                                disk: d.value.blkioRead + d.value.blkioWrite,
+                                network: d.value.networkRx + d.value.networkTx
+                            });
+
+                            return;
+                        }
+                    }
+
+                    data3.push({
+                        appId: d.value.lxcId,
+                        avg: 0,
+                        days: [
+                            {
+                                time: parseTime(d.value.timeFrom),
+                                cpu: d.value.cpu * 100,
+                                memory: d.value.memory * 100,
+                                disk: d.value.blkioRead + d.value.blkioWrite,
+                                network: d.value.networkRx + d.value.networkTx
+                            }
+                        ]
+                    });
+                }
+            });
+
+            data3.forEach(function (d) {
+                if (d.days.length > 0) {
+                    d.avg = {
+                        cpu: d3.sum(d.days, function (d1) { return d1.cpu; }) / d.days.length,
+                        memory: d3.sum(d.days, function (d1) { return d1.memory; }) / d.days.length,
+                        disk: d3.sum(d.days, function (d1) { return d1.disk; }) / d.days.length,
+                        network: d3.sum(d.days, function (d1) { return d1.network; }) / d.days.length
+                    };
+                }
+            });
+
+            // init
+            var graphLines = d3.selectAll("#graph3 li")[0];
+
+            initGraph3(d3.select(graphLines[0]), data3, {
+                appName: "CPU_001",
+                appId: "f2193d3beeb8da439485436c183a55dbb9382ed8125afaab7f6c781b8eefcff5",
+                appLink: "http://google.com"
+            });
+
+            initGraph3(d3.select(graphLines[1]), data3, {
+                appName: "CPU_002",
+                appId: "f1085e71b11b6657a7d3fe462611dc5d79dd2e015035ca570ec244eebd03866e",
+                appLink: "http://google.com"
+            });
+
+            initGraph3(d3.select(graphLines[2]), data3, {
+                appName: "CPU_003",
+                appId: "c21ba840cc179339eca174deee4b669aade9c801dbe9406d6eb02ab889cdf7df",
+                appLink: "http://google.com"
+            });
+
+            initGraph3(d3.select(graphLines[3]), data3, {
+                appName: "CPU_004",
+                appId: "4e87c0a643626201999d67c5bccb7ea43a3e0636d80ad1a2ee4fce41319fc444",
+                appLink: "http://google.com"
+            });
+
+            initGraph3(d3.select(graphLines[4]), data3, {
+                appName: "CPU_005",
+                appId: "480e6c8ae9b0959123253e93b230bdb3e48eeba2ee62b96f463bc578e40208e2",
+                appLink: "http://google.com"
+            });
+            
+            // init graph 1B
+            var graph1BLines = d3.selectAll("#graph1b .graph-container")[0];
+            console.log(graph1BLines)
+
+            initGraph1b(d3.select(graph1BLines[0]), data3, { appId: "f2193d3beeb8da439485436c183a55dbb9382ed8125afaab7f6c781b8eefcff5" });
+            initGraph1b(d3.select(graph1BLines[1]), data3, { appId: "f1085e71b11b6657a7d3fe462611dc5d79dd2e015035ca570ec244eebd03866e" });
+            initGraph1b(d3.select(graph1BLines[2]), data3, { appId: "c21ba840cc179339eca174deee4b669aade9c801dbe9406d6eb02ab889cdf7df" });
+            initGraph1b(d3.select(graph1BLines[3]), data3, { appId: "4e87c0a643626201999d67c5bccb7ea43a3e0636d80ad1a2ee4fce41319fc444" });
+            initGraph1b(d3.select(graph1BLines[4]), data3, { appId: "480e6c8ae9b0959123253e93b230bdb3e48eeba2ee62b96f463bc578e40208e2" });
+        });
+
+        // graph 4
+        d3.json("data40.json", function (error, json) {
+
+            data4 = json;
+
+            data4.samples.forEach(function (d) {
+                d.t = parseTime2(d.time);
+            });
+
+            initGraph4(d3.select("#graph4"), data4);
+        });
+    </script>
+</body>
+</html>

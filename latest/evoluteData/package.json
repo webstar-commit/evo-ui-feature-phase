@@ -1,0 +1,22 @@
+{
+  "name": "evo-data-api",
+  "version": "0.1.0",
+  "description": "Evolute Data API",
+  "main": "evoluteData.js",
+  "author": "Evolute",
+  "dependencies": {
+    "axios": "^0.14.0",
+    "body-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "lodash": "^4.15.0",
+    "method-override": "^2.1.3",
+    "moment": "^2.18.1",
+    "mongoose": "^4.5.8",
+    "morgan": "^1.1.1",
+    "q": "^1.4.1",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "properties-parser": "^0.3.1"
+  }
+}

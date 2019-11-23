@@ -1,0 +1,3 @@
+#!/bin/bash
+export MONGO_URL=mongodb://54.201.183.33:27017/docker
+/usr/local/bin/meteor

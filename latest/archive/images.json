@@ -1,0 +1,7 @@
+{
+  "images": {
+    "evo-nginx": "latest",
+    "evo-nginx-proxy": "latest",
+    "evo-cassandra-seed": "latest"
+  }
+}
